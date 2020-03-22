@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Passport Client Test</title>
+    <script defer src="js/main.js"></script>
+  </head>
+  <body>
+    <h1>Passport Test</h1>
+    <p>
+        NOTE: this example will POST an 'email' property along with 'password'
+        to the endpoint. Default Passport setup will check for 'username', not 'email', in the body,
+        so update the data in the POST requests to match your server setup if necessary. 
+    </p>
+    <section>
+      <h2>General Settings</h2>
+      <form class="frm-general">
+        <fieldset>
+          <div>
+            <label for="endpoint">Endpoint Base URL</label>
+            <input
+              type="text"
+              name="enpoint"
+              id="endpoint"
+              value="http://localhost:8080/"
+            />
+          </div>
+        </fieldset>
+      </form>
+    </section>
+    <section>
+      <h2>Requests</h2>
+      <section>
+        <h3>Register Request</h3>
+        <p>Sends a POST with email and password fields</p>
+        <form class="frm-register">
+          <fieldset>
+            <div>
+              <label for="path-register">Endpoint Path:</label>
+              <input
+                type="text"
+                name="pathRegister"
+                id="path-register"
+                value="register"
+              />
+            </div>
+            <div>
+              <label for="email-register">Email Address:</label>
+              <input
+                type="text"
+                name="emailRegister"
+                id="email-register"
+                value="jdoe@example.com"
+              />
+            </div>
+            <div>
+              <label for="password-register">Password:</label>
+              <input
+                type="text"
+                name="passwordRegister"
+                id="password-register"
+                value="password"
+              />
+            </div>
+            <div>
+              <button type="submit">Register</button>
+            </div>
+          </fieldset>
+        </form>
+        <section>
+          <h3>Response</h3>
+          <div class="register-response"></div>
+        </section>
+      </section>
+      <section>
+        <h3>Login Request</h3>
+        <p>Sends a POST with email and password fields</p>
+        <form class="frm-login">
+          <fieldset>
+            <div>
+              <label for="path-login">Endpoint Path:</label>
+              <input
+                type="text"
+                name="pathLogin"
+                id="path-login"
+                value="login"
+              />
+            </div>
+            <div>
+              <label for="email-login">Email Address:</label>
+              <input
+                type="text"
+                name="emailLogin"
+                id="email-login"
+                value="jdoe@example.com"
+              />
+            </div>
+            <div>
+              <label for="password-login">Password:</label>
+              <input
+                type="text"
+                name="passwordLogin"
+                id="password-login"
+                value="password"
+              />
+            </div>
+            <div>
+              <button type="submit">Login</button>
+            </div>
+          </fieldset>
+        </form>
+        <section>
+          <h3>Response</h3>
+          <div class="login-response"></div>
+        </section>
+      </section>
+      <section>
+        <h3>Protected Request</h3>
+        <p>Sends a GET with no payload</p>
+        <form class="frm-protected">
+          <fieldset>
+            <div>
+              <label for="path-protected">Endpoint Path:</label>
+              <input
+                type="text"
+                name="pathProtected"
+                id="path-protected"
+                value="me"
+              />
+            </div>
+            <div>
+              <button type="submit">Get Protected</button>
+            </div>
+          </fieldset>
+        </form>
+        <section>
+          <h3>Response</h3>
+          <div class="protected-response"></div>
+        </section>
+      </section>
+    </section>
+  </body>
+</html>
