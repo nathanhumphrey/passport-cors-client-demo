@@ -5,7 +5,6 @@
  * @returns {Promise} returned JSON from the response
  */
 const postData = async (url = '', data = {}) => {
-  // Default options are marked with *
   return await (
     await fetch(url, {
       method: 'POST',
